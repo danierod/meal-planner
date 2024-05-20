@@ -2,6 +2,26 @@
   text-align: center;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  font-size: medium;
+
+  &__header {
+    width: 100px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+  }
+
+  &__item {
+    width: 100px;
+    input {
+      width: 92px;
+    }
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
