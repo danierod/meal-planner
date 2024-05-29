@@ -1,82 +1,85 @@
-import { Food } from "../types/food.type";
+import { Ingredient } from "../types/ingredient.type";
 import { useEffect, useMemo, useReducer } from "react";
-import foodDatabase from "../data/food-database";
+import ingredientsDatabase from "../data/ingredients-database";
 
-type FoodState = {
-  food: Food[];
+type IngredientState = {
+  ingredients: Ingredient[];
   isLoading: boolean;
   error?: boolean;
   errorMessage?: string;
 };
 
-type FoodAction =
-  | { type: FoodActionType.SET_FOODS; results: Food[] }
-  | { type: FoodActionType.START_FETCHING }
-  | { type: FoodActionType.SET_ERROR; error: string };
+type IngredientAction =
+  | { type: IngredientActionType.SET_FOODS; results: Ingredient[] }
+  | { type: IngredientActionType.START_FETCHING }
+  | { type: IngredientActionType.SET_ERROR; error: string };
 
-enum FoodActionType {
+enum IngredientActionType {
   SET_FOODS = "SET_FOODS",
   START_FETCHING = "START_FETCHING",
   SET_ERROR = "SET_ERROR",
 }
 
-const DEFAULT_STATE: FoodState = {
-  food: foodDatabase,
+const DEFAULT_STATE: IngredientState = {
+  ingredients: [],
   isLoading: false,
   error: undefined,
   errorMessage: undefined,
 };
 
-const useFetchFood = () => {
+const useFetchIngredient = () => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
 
   useEffect(() => {
-    const fetchFood = () => {
-      if (!foodDatabase) {
+    const fetchIngredient = () => {
+      if (!ingredientsDatabase) {
         dispatch({
-          type: FoodActionType.SET_ERROR,
-          error: "Unable to serve the food",
+          type: IngredientActionType.SET_ERROR,
+          error: "Unable to serve the ingredients",
         });
         return;
       }
 
       dispatch({
-        type: FoodActionType.SET_FOODS,
-        results: foodDatabase,
+        type: IngredientActionType.SET_FOODS,
+        results: ingredientsDatabase,
       });
     };
 
-    dispatch({ type: FoodActionType.START_FETCHING });
+    dispatch({ type: IngredientActionType.START_FETCHING });
 
-    // TODO: Remove delayed fetchFood when using the real backend implementation
-    const delayedFetchFood = async () => {
-      setTimeout(fetchFood, 1000);
+    // TODO: Remove delayed fetchIngredient when using the real backend implementation
+    const delayedFetchIngredient = async () => {
+      setTimeout(fetchIngredient, 1000);
     };
 
-    delayedFetchFood();
+    delayedFetchIngredient();
   }, []);
 
   return { ...state };
 };
 
-function reducer(state: FoodState, action: FoodAction): FoodState {
+function reducer(
+  state: IngredientState,
+  action: IngredientAction
+): IngredientState {
   switch (action.type) {
-    case FoodActionType.SET_FOODS: {
+    case IngredientActionType.SET_FOODS: {
       return {
         ...state,
-        food: action.results,
+        ingredients: action.results,
         isLoading: false,
         error: undefined,
         errorMessage: undefined,
       };
     }
-    case FoodActionType.START_FETCHING: {
+    case IngredientActionType.START_FETCHING: {
       return {
         ...state,
         isLoading: true,
       };
     }
-    case FoodActionType.SET_ERROR: {
+    case IngredientActionType.SET_ERROR: {
       return {
         ...state,
         isLoading: false,
@@ -87,4 +90,4 @@ function reducer(state: FoodState, action: FoodAction): FoodState {
   }
 }
 
-export default useFetchFood;
+export default useFetchIngredient;

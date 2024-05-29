@@ -1,6 +1,6 @@
-import { Food, UnitName, UnitSymbol } from "../types/food.type";
+import { Ingredient, UnitName, UnitSymbol } from "../types/ingredient.type";
 
-const foodDatabase: Food[] = [
+const foodDatabase: Ingredient[] = [
   {
     name: "chicken, thigh, boneless, skinless, raw",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",

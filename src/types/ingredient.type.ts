@@ -1,4 +1,4 @@
-export interface Food {
+export interface Ingredient {
   name: string;
   description: string;
   group: string;
