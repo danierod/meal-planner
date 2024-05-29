@@ -1,7 +1,8 @@
 import { Ingredient, UnitName, UnitSymbol } from "../types/ingredient.type";
 
-const foodDatabase: Ingredient[] = [
+const ingredientsDatabase: Ingredient[] = [
   {
+    id: 1,
     name: "chicken, thigh, boneless, skinless, raw",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -224,6 +225,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 2,
     name: "chicken, breast, boneless, skinless, raw",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -446,6 +448,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 3,
     name: "pork steak",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -668,6 +671,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 4,
     name: "rice, white",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -890,6 +894,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 5,
     name: "lettuce",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -1112,6 +1117,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 6,
     name: "egg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -1334,6 +1340,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 7,
     name: "broculli",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -1556,6 +1563,7 @@ const foodDatabase: Ingredient[] = [
     ],
   },
   {
+    id: 8,
     name: "olive oil",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     group: "Poultry Products",
@@ -1779,4 +1787,4 @@ const foodDatabase: Ingredient[] = [
   },
 ];
 
-export default foodDatabase;
+export default ingredientsDatabase;

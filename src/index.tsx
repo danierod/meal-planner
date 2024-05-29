@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import ErrorPage from "./ErrorPage";
 import Ingredients from "./routes/Ingredients";
+import Meals from "./routes/Meals";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   { path: "/ingredients", element: <Ingredients /> },
+  { path: "/meals", element: <Meals /> },
 ]);
 
 root.render(

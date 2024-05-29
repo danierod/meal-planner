@@ -27,7 +27,7 @@ const DEFAULT_STATE: IngredientState = {
   errorMessage: undefined,
 };
 
-const useFetchIngredient = () => {
+const useFetchIngredients = () => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
 
   useEffect(() => {
@@ -90,4 +90,4 @@ function reducer(
   }
 }
 
-export default useFetchIngredient;
+export default useFetchIngredients;
